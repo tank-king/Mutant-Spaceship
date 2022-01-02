@@ -262,16 +262,16 @@ class Player(BaseObject):
             self.index %= len(self.flame)
             self.timer = time.time()
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             self.angle += 3
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.angle -= 3
         angle = self.angle - 90
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_UP] or keys[pygame.K_w]:
             self.accelerate()
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_DOWN] or keys[pygame.K_d]:
             self.decelerate()
-        if keys[pygame.K_SPACE]:
+        if keys[pygame.K_SPACE] or keys[pygame.K_e]:
             self.fire()
         dx = cos(radians(angle))
         dy = -sin(radians(angle))
